@@ -71,6 +71,12 @@ This program is free software under the GNU General Public License
 #% required: no
 #% answer: corridors
 #%end 
+#%option
+#% key: lcp_merged
+#% type: string
+#% description: Name for Least Cost Path merged output raster
+#% required: no
+#% answer: lcp_merged
 
 import os, sys, csv
 import grass.script as grass
@@ -162,7 +168,7 @@ def create_fst_pairs(fst, f_max, pval, p_maxi, num_locs):
 	return pairs
 
 
-def create_lcp_corridors(pairs, locs):
+def create_lcp_corridors(pairs, locs, lcp_merged):
 	"""
 	Loop thru all pairs of localities in the pairs list
 	FOr each pair, find the codes of that pair from the localities list,
@@ -199,7 +205,13 @@ def create_lcp_corridors(pairs, locs):
 		lcp = "lcp_"+code1+"_"+code2
 		grass.run_command('r.reclass',input=corridor,output=lcp, rule=tmp_reclass, overwrite=True, quiet=True)
 		grass.run_command('r.colors', map=lcp, color="ryg", quiet=True)
+		# Get rid of tmp reclass file
+		unlink(tmp_reclass)
 
+	# Now merge all lcp_* maps
+	lcp_maps = grass.read_command('g.mlist', type="rast", pattern="lcp_*", separator=",")
+	grass.run_command('r.series',input = lcp_maps, output = lcp_merged, method=sum, overwrite=True, quiet=True)
+	grass.run_command('r.colors', map=lcp_merged, color="ryg", quiet=True)
 	return len(pairs)
 
 
@@ -219,6 +231,7 @@ def main():
 	p_max = options['p_max']
 	corr = options['corridors']
 	friction = options['friction']
+	lcp_merged = options['lcp_merged']
 
 	if not hsm:
 		grass.fatal("Input habitat suitability raster is required")
@@ -234,7 +247,7 @@ def main():
 	grass.message("Created: "+cost_count+" least cost maps")
 	pairs=create_fst_pairs(fst, f_max, pval, p_max, len(loc_list))
 	grass.message("Created list of: "+str(len(pairs))+" Fst pairs ")
-	lcp_count = create_lcp_corridors(pairs, loc_list)
+	lcp_count = create_lcp_corridors(pairs, loc_list, lcp_merged)
 	grass.message("Created: "+lcp_count+" Least Cost Path reclass maps")
 
 
