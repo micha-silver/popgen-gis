@@ -74,7 +74,7 @@ This program is free software under the GNU General Public License
 
 import os, sys, csv
 import grass.script as grass
- 
+import numpy as np
 
 
 def create_friction(hsm, friction):
@@ -135,6 +135,22 @@ def create_cost_maps(loc_list, friction)
 	return cnt
 
 
+def create_fst_pairs(fst, f_max, pval, p_maxi, num_locs)
+	"""
+	Use NumPy to import Fst and p-value matrices
+	Use boolean comparisons to find which Fst values are <= f_max
+	and which p-value values are <= p_max
+	Create a list of pairs (of localities) which match the conditions
+	"""
+	
+	# Import arrays, skip header row, and slice off first column
+	fst_mat = np.genfromtxt(fst, skip_headers=1, delimiter=',', usecols=range(1,39))
+	pval_mat = np.genfromtxt(pval, skip_headers=1, delimiter=',', usecols=range(1,39))
+	fst_accept = fst_mat <= f_max
+	pval_accept = pval_mat <= p_max
+	# Create array where both conditions apply (logical AND)
+	accept = np.logical_and(fst_accept, pval_accept)
+
 
 def main():
 	""" 
@@ -165,6 +181,8 @@ def main():
 	loc_list = create_localities(loc)
 	cost_count = create_cost_maps(loc_list, friction)
 	grass.message("Created: "+cost_count+" least cost maps")
+	pairs=create_fst_pairs(fst, f_max, pval, p_max, len(loc_list))
+	grass.message("Created list of: "+str(len(pairs))+" Fst pairs ")
 
 
 
