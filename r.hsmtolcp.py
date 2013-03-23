@@ -95,8 +95,9 @@ def create_friction(hsm, friction):
 	if exists:
 		grass.message("friction raster: "+friction +" already exists and will be overwritten")
 	
-	friction_expr = "friction = 1.0-hsm"
+	friction_expr = friction+" = 1.0-hsm"
 	grass.mapcalc(friction_expr)
+
 
 
 def create_localities(loc):
@@ -112,13 +113,15 @@ def create_localities(loc):
 	locs=csv.reader(csv_file, delimiter=',')
 	loc_list=[]
 	for l in locs:
-		loc_list.append([l[0],l[1],l[2],l[3]])
+		# Add to the loc_list a tuple containing the code, X coord and Y coord
+		loc_list.append([l[1],l[2],l[3]])
 
 	csv_file.close()
 	return loc_list
 
 
-def create_cost_maps(loc_list, friction)
+
+def create_cost_maps(loc_list, friction):
 	"""
 	Use the friction map to create a least cost cost raster for each of the localities
 	based on the friction map and locality coordinates
@@ -128,28 +131,76 @@ def create_cost_maps(loc_list, friction)
 	for i in range(len(loc_list)):
 		cnt +=1
 		code, x, y = loc_list[i][0], loc_list[i][2], loc_list[i][3]
-		outrast="cost"+code
+		outrast="cost_"+code
 		coords=x+","+y
 		grass.run_command('r.cost', input=friction, output=outrast, coordinates=coords, overwrite=True, quiet=True)
 
 	return cnt
 
 
-def create_fst_pairs(fst, f_max, pval, p_maxi, num_locs)
+def create_fst_pairs(fst, f_max, pval, p_maxi, num_locs):
 	"""
 	Use NumPy to import Fst and p-value matrices
 	Use boolean comparisons to find which Fst values are <= f_max
 	and which p-value values are <= p_max
-	Create a list of pairs (of localities) which match the conditions
+	Create a list of pairs (of localities) which match both conditions
 	"""
 	
 	# Import arrays, skip header row, and slice off first column
-	fst_mat = np.genfromtxt(fst, skip_headers=1, delimiter=',', usecols=range(1,39))
-	pval_mat = np.genfromtxt(pval, skip_headers=1, delimiter=',', usecols=range(1,39))
-	fst_accept = fst_mat <= f_max
-	pval_accept = pval_mat <= p_max
+	fst_mat = np.genfromtxt(fst, skip_headers=1, delimiter=',', usecols=range(1,num_locs+1))
+	pval_mat = np.genfromtxt(pval, skip_headers=1, delimiter=',', usecols=range(1,num_locs+1))
+	# Make boolean arrays that reflect the max conditions for Fst and p-value 
+	fst_bool = fst_mat <= f_max
+	pval_bool = pval_mat <= p_max
 	# Create array where both conditions apply (logical AND)
-	accept = np.logical_and(fst_accept, pval_accept)
+	acc_bool = np.logical_and(fst_bool, pval_bool)
+	# Get indices where accept matrix is TRUE
+	accept = np.where(acc_bool)
+	# And convert to list
+	pairs = np.transpose(accept).tolist()
+
+	return pairs
+
+
+def create_lcp_corridors(pairs, locs):
+	"""
+	Loop thru all pairs of localities in the pairs list
+	FOr each pair, find the codes of that pair from the localities list,
+	add together the two cost maps of those two localities to create a corridor
+	Get the minimum for each corridor using r.univar, 
+	Use that minimum to make a reclass file with values:
+		min					= 3			Min value
+		min + 2% 		= 2			Two percent above
+		min + 5%		=	1			Five percent above
+		*						= NULL	NULL
+	Run r.reclass to create uniform reclass rasters for each pair
+	"""
+	for i in range(len(pairs)):
+		id1, id2 = pairs[i][0], pairs[i][1]
+		code1, code2  = locs[id1][0], locs[id2][0]
+		cost1, cost2  = "cost_"+code1, "cost_"+code2
+		corridor = "corr_"+code1+"_"+code2
+		corridor_expr = corridor+"=round("+cost1+"+"+cost2+")"
+		grass.mapcalc(corridor_expr)
+		u = grass.read_command('r.univar', map=corridor, flags="g", quiet=True)
+		udict = grass.parse_key_val(u)
+		min = float(udict['min'])
+		two_pc = min*1.02
+		five_pc = min*1.05
+		# Create reclass file
+		tmp_reclass = grass.tempfile()
+		trc = open(tmp_reclass, "w")
+		trc.write(min + " = 3	\t Minimum\n")
+		trc.write(two_pc + " = 2 \t Two percent\n")
+		trc.write(five_pc + " = 1 \t Five percent\n")
+		trc.write("* = NULL \t NULL\n")
+		trc.close()
+		# Now create reclass raster
+		lcp = "lcp_"+code1+"_"+code2
+		grass.run_command('r.reclass',input=corridor,output=lcp, rule=tmp_reclass, overwrite=True, quiet=True)
+		grass.run_command('r.colors', map=lcp, color="ryg", quiet=True)
+
+	return len(pairs)
 
 
 def main():
@@ -183,7 +234,8 @@ def main():
 	grass.message("Created: "+cost_count+" least cost maps")
 	pairs=create_fst_pairs(fst, f_max, pval, p_max, len(loc_list))
 	grass.message("Created list of: "+str(len(pairs))+" Fst pairs ")
-
+	lcp_count = create_lcp_corridors(pairs, loc_list)
+	grass.message("Created: "+lcp_count+" Least Cost Path reclass maps")
 
 
 if __name__ == "__main__":
