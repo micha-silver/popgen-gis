@@ -1,7 +1,7 @@
 #!/usr/bin/env python
  
 """
-MODULE:    r.hsmtolcp.py
+MODULE:    r.hsmtolcp64.py
 AUTHOR(S): Micha Silver <micha at arava co il>
 PURPOSE:   Create predicted migration corridors for insects
 		based on a habitat suitability raster produced using Maxent "presence only" software and
@@ -9,6 +9,8 @@ PURPOSE:   Create predicted migration corridors for insects
 COPYRIGHT: (C) 2013 Micha Silver, Pablo Fresia and the GRASS Development Team
 This program is free software under the GNU General Public License
 (>=v2). Read the file COPYING that comes with GRASS for details.
+
+This version of the script is adapted to run on GRASS 6.4.x
 """
 
 #%module
@@ -133,7 +135,7 @@ def create_localities(loc):
 
 	# Make a GRASS vector
 	loc_vector = os.path.splitext(loc)[0]
-	grass.run_command('v.in.ascii', input=loc, output=loc_vector, separator=",", x=4, y=5, 
+	grass.run_command('v.in.ascii', input=loc, output=loc_vector, fs=",", x=4, y=5, 
 			columns="loc_name varchar(32), id integer, code varchar(6), longitude double, latitude double", 
 			quiet=True, overwrite=True)
 	
@@ -174,13 +176,14 @@ def create_lcp_corridors(friction, pairs, locs, lcp_network):
 	"""
 	Loop thru all pairs of localities in the pairs list
 	FOr each pair, find the indexes, codes and X-Y coords of that pair from the localities list,
-	Use r.cost to make corridor maps using the start_coordinate and end_coordinate paramters
+	Use r.cost to make cost maps using the coordinate paramter
+	Combine each pair of cost maps to create the corridor
 	Get the minimum for each corridor using r.univar, 
 	Use that minimum to make a reclass file with values:
-		0 thru min		= 5		Min value
-		min thru (min + 5%)	= 3		Two percent above
-		min+5% thru min+10%	= 1		Five percent above
-		*			= NULL		NULL
+		min					= 5			Min value
+		min + 5% 		= 3			Two percent above
+		min + 8%		=	1			Five percent above
+		*						= NULL	NULL
 	Run r.reclass to create uniform reclass rasters for each pair
 	"""
 	grass.message(" === Creating corridors ===")
@@ -211,9 +214,9 @@ def create_lcp_corridors(friction, pairs, locs, lcp_network):
 			start1=x1+","+y1
 			start2=x2+","+y2
 			grass.run_command('r.cost', input=friction, output=cost1, 
-				start_coordinate=start1, overwrite=True, quiet=True)
+				coordinate=start1, overwrite=True, quiet=True)
 			grass.run_command('r.cost', input=friction, output=cost2, 
-				start_coordinate=start2,  overwrite=True, quiet=True)
+				coordinate=start2,  overwrite=True, quiet=True)
 
 			# Now combine the cost maps into a corridor
 			corridor = "corr_"+code1+"_"+code2
@@ -224,14 +227,14 @@ def create_lcp_corridors(friction, pairs, locs, lcp_network):
 			udict = grass.parse_key_val(u)
 			min = float(udict['min'])
 			five_pc = min*1.05
-			ten_pc = min*1.10
+			eight_pc = min*1.08
 			# Create reclass file
 			tmp_reclass = grass.tempfile()
 			trc = open(tmp_reclass, "w")
 			# Convert to int for output to the reclass file
-			trc.write("0 thru " + str(int(min)) + " = 5	\t Minimum\n")
+			trc.write("0 thru "+str(int(min)) + " = 5	\t Minimum\n")
 			trc.write(str(int(min)) + " thru " + str(int(five_pc)) + " = 3 \t Five percent\n")
-			trc.write(str(int(five_pc)) + " thru " +str(int(ten_pc)) + " = 1 \t Ten percent\n")
+			trc.write(str(int(five_pc)) + " thru " +str(int(eight_pc)) + " = 1 \t Eight percent\n")
 			trc.write("* = NULL \t NULL\n")
 			trc.close()
 			# Now create reclass raster
