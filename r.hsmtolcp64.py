@@ -226,15 +226,16 @@ def create_lcp_corridors(friction, pairs, locs, lcp_network):
 			u = grass.read_command('r.univar', map=corridor, flags="g", quiet=True)
 			udict = grass.parse_key_val(u)
 			min = float(udict['min'])
+			one_pc = min*1.01
+			three_pc = min*1.03
 			five_pc = min*1.05
-			eight_pc = min*1.08
 			# Create reclass file
 			tmp_reclass = grass.tempfile()
 			trc = open(tmp_reclass, "w")
 			# Convert to int for output to the reclass file
-			trc.write("0 thru "+str(int(min)) + " = 5	\t Minimum\n")
-			trc.write(str(int(min)) + " thru " + str(int(five_pc)) + " = 3 \t Five percent\n")
-			trc.write(str(int(five_pc)) + " thru " +str(int(eight_pc)) + " = 1 \t Eight percent\n")
+			trc.write(str(int(min))+" thru "+str(int(one_pc)) + " = 5	\t Minimum\n")
+			trc.write(str(int(one_pc)) + " thru " + str(int(three_pc)) + " = 3 \t Three percent\n")
+			trc.write(str(int(three_pc)) + " thru " +str(int(five_pc)) + " = 1 \t Five percent\n")
 			trc.write("* = NULL \t NULL\n")
 			trc.close()
 			# Now create reclass raster
@@ -267,7 +268,7 @@ def export_layers(vect, rast):
 	if os.path.isfile(gtiff):
 		os.unlink(gtiff)
 	
-	grass.run_command('v.out.ogr',input=vect, dsn=shp, overwrite=True, quiet=True, flags="e")
+	grass.run_command('v.out.ogr',input=vect, dsn=shp, type='point', overwrite=True, quiet=True, flags="e")
 	grass.run_command('r.out.gdal', input=rast, output=gtiff, 
 			overwrite=True, quiet=True, type="Float64", createopt="TFW=YES")
 	
