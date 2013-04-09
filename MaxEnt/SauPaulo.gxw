@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gxw SYSTEM "grass-gxw.dtd">
+<gxw>
+    <layer_manager dim="0,25,553,583">
+    </layer_manager>
+    <display name="Display 1" render="1" mode="0" showCompExtent="0" alignExtent="1" constrainRes="0" dim="562,25,710,890" extent="-55.000000,-26.000000,-43.000000,-18.000000" viewMode="2d" >
+        <layer type="raster" name="lcp_merged@Pablo" checked="0" opacity="1.000000">
+            <task name="d.rast">
+                <parameter name="map">
+                    <value>lcp_merged@Pablo</value>
+                </parameter>
+            </task>
+        </layer>
+        <layer type="raster" name="lcp_SUD_ITI@Pablo" checked="0" opacity="1.000000">
+            <selected />
+            <task name="d.rast">
+                <parameter name="map">
+                    <value>lcp_SUD_ITI@Pablo</value>
+                </parameter>
+            </task>
+        </layer>
+        <layer type="raster" name="corridor_SUD_ITI@Pablo" checked="0" opacity="1.000000">
+            <task name="d.rast">
+                <parameter name="map">
+                    <value>corridor_SUD_ITI@Pablo</value>
+                </parameter>
+            </task>
+        </layer>
+        <layer type="raster" name="cost_ITI@Pablo" checked="0" opacity="1.000000">
+            <task name="d.rast">
+                <parameter name="map">
+                    <value>cost_ITI@Pablo</value>
+                </parameter>
+            </task>
+        </layer>
+        <layer type="raster" name="friction@Pablo" checked="0" opacity="1.000000">
+            <task name="d.rast">
+                <parameter name="map">
+                    <value>friction@Pablo</value>
+                </parameter>
+            </task>
+        </layer>
+        <layer type="raster" name="hsm@Pablo" checked="0" opacity="1.000000">
+            <task name="d.rast">
+                <parameter name="map">
+                    <value>hsm@Pablo</value>
+                </parameter>
+            </task>
+        </layer>
+    </display>
+</gxw>

@@ -1,0 +1,1375 @@
+Fri Sep 28 14:57:05 IST 2012
+MaxEnt version 3.3.3k
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/alt.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio12.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio13.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio14.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio15.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio17.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio18.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio19.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio2.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio3.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio4.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio5.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/bio8.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/cattle.asc
+Checking header of /home/micha/geodata/Pablo/SA/AAIGrid/glc2000.asc
+Reading samples from NWS_inputs.csv
+Read samples: max memory 1813839872, total allocated 122159104, free 109982896, used 12176208, increment 12176208
+Warning: interpreting Latitude column of sample file as latitude
+Warning: Sample at -98.23, 27.03 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -111.52, 28.58 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -98.7, 22.8 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -98.17, 22.05 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -103.72, 19.23 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -96.13, 19.2 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -104.32, 19.05 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -91.35, 16.92 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -93.0, 16.7 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -97.82, 16.28 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -93.9, 16.23 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -93.23, 16.23 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -92.65, 15.63 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -92.7, 15.28 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Warning: Sample at -90.53, 14.62 in NWS_inputs.csv is outside the bounding box of environmental data, skipping
+Time since start: 4.566
+Converting file /home/micha/geodata/Pablo/SA/AAIGrid/alt.asc size 199769449, max memory = 1813839872
+Reading file alt.asc
+Time since start: 10.872
+SHORT, 23292574 pixels with data
+readGrid: max memory 1813839872, total allocated 851705856, free 169600640, used 682105216, increment 669929008
+Writing file /home/micha/geodata/Pablo/SA/AAIGrid/maxent.cache/alt.mxe
+Time since start: 16.79
+Extractor: max memory 1813839872, total allocated 851705856, free 168919288, used 682786568, increment 681352
+Extracting random background and sample data
+Warning: Sample at -83.7, 22.42 in NWS_inputs.csv is missing some environmental data (e.g. glc2000)
+Warning: Skipping sample at -83.7, 22.42
+Warning: Sample at -82.9, 21.88 in NWS_inputs.csv is missing some environmental data (e.g. glc2000)
+Warning: Skipping sample at -82.9, 21.88
+Warning: Sample at -78.76, 21.84 in NWS_inputs.csv is missing some environmental data (e.g. glc2000)
+Warning: Skipping sample at -78.76, 21.84
+Warning: Sample at -76.95, 20.96 in NWS_inputs.csv is missing some environmental data (e.g. glc2000)
+Warning: Skipping sample at -76.95, 20.96
+Warning: Sample at -75.82, 20.02 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -75.82, 20.02
+Warning: Sample at -75.13, 20.0 in NWS_inputs.csv is missing some environmental data (e.g. alt)
+Warning: Skipping sample at -75.13, 20.0 which has no environmental data
+Warning: Sample at -88.25, 18.55 in NWS_inputs.csv is missing some environmental data (e.g. alt)
+Warning: Skipping sample at -88.25, 18.55 which has no environmental data
+Warning: Sample at -88.3, 18.5 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -88.3, 18.5
+Warning: Sample at -69.9, 18.47 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -69.9, 18.47
+Warning: Sample at -88.55, 18.07 in NWS_inputs.csv is missing some environmental data (e.g. glc2000)
+Warning: Skipping sample at -88.55, 18.07
+Warning: Sample at -76.79, 18.0 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -76.79, 18.0
+Warning: Sample at -70.2, 11.71 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -70.2, 11.71
+Warning: Sample at -85.52, 11.03 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -85.52, 11.03
+Warning: Sample at -85.43, 10.99 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -85.43, 10.99
+Warning: Sample at -85.54, 10.98 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -85.54, 10.98
+Warning: Sample at -85.41, 10.88 in NWS_inputs.csv is missing some environmental data (e.g. glc2000)
+Warning: Skipping sample at -85.41, 10.88
+Warning: Sample at -85.68, 10.8 in NWS_inputs.csv is missing some environmental data (e.g. alt)
+Warning: Skipping sample at -85.68, 10.8 which has no environmental data
+Warning: Sample at -85.31, 10.76 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -85.31, 10.76
+Warning: Sample at -85.1, 10.73 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -85.1, 10.73
+Warning: Sample at -61.52, 10.65 in NWS_inputs.csv is missing some environmental data (e.g. alt)
+Warning: Skipping sample at -61.52, 10.65 which has no environmental data
+Warning: Sample at -66.89, 10.6 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -66.89, 10.6
+Warning: Sample at -85.02, 10.58 in NWS_inputs.csv is missing some environmental data (e.g. glc2000)
+Warning: Skipping sample at -85.02, 10.58
+Warning: Sample at -61.09, 10.53 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -61.09, 10.53
+Warning: Sample at -85.1, 10.43 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -85.1, 10.43
+Warning: Sample at -85.2, 10.42 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -85.2, 10.42
+Warning: Sample at -61.47, 10.28 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -61.47, 10.28
+Warning: Sample at -70.07, 10.18 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -70.07, 10.18
+Warning: Sample at -84.51, 10.01 in NWS_inputs.csv is missing some environmental data (e.g. glc2000)
+Warning: Skipping sample at -84.51, 10.01
+Warning: Sample at -83.78, 9.75 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -83.78, 9.75
+Warning: Sample at -85.07, 9.65 in NWS_inputs.csv is missing some environmental data (e.g. alt)
+Warning: Skipping sample at -85.07, 9.65
+Warning: Sample at -84.13, 9.39 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -84.13, 9.39
+Warning: Sample at -82.8, 8.92 in NWS_inputs.csv is missing some environmental data (e.g. glc2000)
+Warning: Skipping sample at -82.8, 8.92
+Warning: Sample at -83.43, 8.53 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -83.43, 8.53
+Warning: Sample at -69.83, 8.49 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -69.83, 8.49
+Warning: Sample at -77.0, 6.0 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -77.0, 6.0
+Warning: Sample at -77.8, -0.91 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -77.8, -0.91
+Warning: Sample at -80.01, -1.55 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -80.01, -1.55
+Warning: Sample at -80.72, -2.32 in NWS_inputs.csv is missing some environmental data (e.g. bio14)
+Warning: Skipping sample at -80.72, -2.32
+Warning: Sample at -60.03, -3.1 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -60.03, -3.1
+Warning: Sample at -79.84, -6.77 in NWS_inputs.csv is missing some environmental data (e.g. bio14)
+Warning: Skipping sample at -79.84, -6.77
+Warning: Sample at -34.88, -8.05 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -34.88, -8.05
+Warning: Sample at -76.27, -10.68 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -76.27, -10.68
+Warning: Sample at -75.23, -12.07 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -75.23, -12.07
+Warning: Sample at -49.25, -16.68 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -49.25, -16.68
+Warning: Sample at -51.81, -16.96 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -51.81, -16.96
+Warning: Sample at -54.65, -20.44 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -54.65, -20.44
+Warning: Sample at -54.62, -20.45 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -54.62, -20.45
+Warning: Sample at -51.07, -21.69 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -51.07, -21.69
+Warning: Sample at -45.41, -23.62 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -45.41, -23.62
+Warning: Sample at -64.97, -24.32 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -64.97, -24.32
+Warning: Sample at -50.1, -24.92 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -50.1, -24.92
+Warning: Sample at -54.57, -25.6 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -54.57, -25.6
+Warning: Sample at -60.72, -27.58 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -60.72, -27.58
+Warning: Sample at -51.7, -28.88 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -51.7, -28.88
+Warning: Sample at -51.23, -30.03 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -51.23, -30.03
+Warning: Sample at -58.29, -33.99 in NWS_inputs.csv is missing some environmental data (e.g. glc2000)
+Warning: Skipping sample at -58.29, -33.99
+Warning: Sample at -58.58, -34.5 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -58.58, -34.5
+Warning: Sample at -62.28, -38.72 in NWS_inputs.csv is missing some environmental data (e.g. cattle)
+Warning: Skipping sample at -62.28, -38.72
+Time since start: 99.405
+11855844 points with values for all grids
+Adding samples to background in feature space
+Command line used: 
+Command line to repeat: java density.MaxEnt nowarnings noprefixes jackknife outputdirectory=/home/micha/geodata/Pablo/SA/MaxEnt samplesfile=/home/micha/geodata/Pablo/SA/NWS_inputs.csv environmentallayers=/home/micha/geodata/Pablo/SA/AAIGrid -N bio1 -N bio10 -N bio11 -N bio16 -N bio6 -N bio7 -N bio9 -t glc2000
+Species: Cochliomyia_hominivorax
+Layers: alt bio12 bio13 bio14 bio15 bio17 bio18 bio19 bio2 bio3 bio4 bio5 bio8 cattle glc2000
+Layertypes: Continuous Continuous Continuous Continuous Continuous Continuous Continuous Continuous Continuous Continuous Continuous Continuous Continuous Continuous Categorical
+jackknife: true
+outputdirectory: /home/micha/geodata/Pablo/SA/MaxEnt
+samplesfile: /home/micha/geodata/Pablo/SA/NWS_inputs.csv
+environmentallayers: /home/micha/geodata/Pablo/SA/AAIGrid
+
+getSamples: max memory 1813839872, total allocated 851705856, free 140343720, used 711362136, increment 28575568
+Time since start: 103.637
+Making features
+makeFeatures: max memory 1813839872, total allocated 851705856, free 126884000, used 724821856, increment 13459720
+Cochliomyia_hominivorax: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 851705856, free 113931208, used 737774648, increment 12952792
+linearPredictor: max memory 1813839872, total allocated 851705856, free 113931208, used 737774648, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 851705856, free 113931064, used 737774792, increment 144
+Sequential: max memory 1813839872, total allocated 851705856, free 113931064, used 737774792, increment 0
+Initial loss: 9.215029361462314
+Time since start: 110.616
+500: time = 6.395000 loss = 8.135749
+Resulting gain: 1.0792806338054302
+Time since start: 112.154
+Projecting...
+Writing file /home/micha/geodata/Pablo/SA/MaxEnt/Cochliomyia_hominivorax.asc
+Time since start: 177.766
+Writing /home/micha/geodata/Pablo/SA/MaxEnt/plots/Cochliomyia_hominivorax.png
+Time since start: 190.29
+Jackknife: leave alt out
+Making features
+makeFeatures: max memory 1813839872, total allocated 306970624, free 242362912, used 64607712, increment -673167080
+Cochliomyia_hominivorax alt: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 306970624, free 232119560, used 74851064, increment 10243352
+linearPredictor: max memory 1813839872, total allocated 306970624, free 232119560, used 74851064, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 306970624, free 232119560, used 74851064, increment 0
+Sequential: max memory 1813839872, total allocated 306970624, free 232119560, used 74851064, increment 0
+Initial loss: 9.215029361462314
+Time since start: 196.217
+500: time = 5.723000 loss = 8.175903
+Jackknife: leave bio12 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 228392960, free 116431192, used 111961768, increment 37110704
+Cochliomyia_hominivorax bio12: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 228392960, free 105513224, used 122879736, increment 10917968
+linearPredictor: max memory 1813839872, total allocated 228392960, free 105513224, used 122879736, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 228392960, free 105513224, used 122879736, increment 0
+Sequential: max memory 1813839872, total allocated 228392960, free 105513224, used 122879736, increment 0
+Initial loss: 9.215029361462314
+Time since start: 202.053
+500: time = 5.633000 loss = 8.153745
+Jackknife: leave bio13 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 182255616, free 86546976, used 95708640, increment -27171096
+Cochliomyia_hominivorax bio13: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 182255616, free 75234248, used 107021368, increment 11312728
+linearPredictor: max memory 1813839872, total allocated 182255616, free 75234248, used 107021368, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 182255616, free 75234248, used 107021368, increment 0
+Sequential: max memory 1813839872, total allocated 182255616, free 75234248, used 107021368, increment 0
+Initial loss: 9.215029361462314
+Time since start: 208.291
+500: time = 6.032000 loss = 8.159638
+Jackknife: leave bio14 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 187301888, free 61994032, used 125307856, increment 18286488
+Cochliomyia_hominivorax bio14: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 187301888, free 50713576, used 136588312, increment 11280456
+linearPredictor: max memory 1813839872, total allocated 187301888, free 50713576, used 136588312, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 187301888, free 50713576, used 136588312, increment 0
+Sequential: max memory 1813839872, total allocated 187301888, free 50713576, used 136588312, increment 0
+Initial loss: 9.215029361462314
+Time since start: 214.551
+500: time = 6.053000 loss = 8.137803
+Jackknife: leave bio15 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 199491584, free 77682776, used 121808808, increment -14779504
+Cochliomyia_hominivorax bio15: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 199491584, free 65252544, used 134239040, increment 12430232
+linearPredictor: max memory 1813839872, total allocated 199491584, free 65252544, used 134239040, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 199491584, free 65252544, used 134239040, increment 0
+Sequential: max memory 1813839872, total allocated 199491584, free 65252544, used 134239040, increment 0
+Initial loss: 9.215029361462314
+Time since start: 220.969
+500: time = 6.211000 loss = 8.136096
+Jackknife: leave bio17 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 198901760, free 66752200, used 132149560, increment -2089480
+Cochliomyia_hominivorax bio17: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 198901760, free 55961952, used 142939808, increment 10790248
+linearPredictor: max memory 1813839872, total allocated 198901760, free 55961952, used 142939808, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 198901760, free 55961952, used 142939808, increment 0
+Sequential: max memory 1813839872, total allocated 198901760, free 55961952, used 142939808, increment 0
+Initial loss: 9.215029361462314
+Time since start: 227.26
+500: time = 6.083000 loss = 8.139097
+Jackknife: leave bio18 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 112197632, free 62317096, used 49880536, increment -93059272
+Cochliomyia_hominivorax bio18: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 112197632, free 51073224, used 61124408, increment 11243872
+linearPredictor: max memory 1813839872, total allocated 112197632, free 50992832, used 61204800, increment 80392
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 112197632, free 50992832, used 61204800, increment 0
+Sequential: max memory 1813839872, total allocated 112197632, free 50992832, used 61204800, increment 0
+Initial loss: 9.215029361462314
+Time since start: 233.406
+500: time = 5.940000 loss = 8.216435
+Jackknife: leave bio19 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 110690304, free 45744056, used 64946248, increment 3741448
+Cochliomyia_hominivorax bio19: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 113901568, free 50909656, used 62991912, increment -1954336
+linearPredictor: max memory 1813839872, total allocated 113901568, free 50909656, used 62991912, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 113901568, free 50909656, used 62991912, increment 0
+Sequential: max memory 1813839872, total allocated 113901568, free 50909656, used 62991912, increment 0
+Initial loss: 9.215029361462314
+Time since start: 239.597
+500: time = 5.983000 loss = 8.146268
+Jackknife: leave bio2 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 117047296, free 45145720, used 71901576, increment 8909664
+Cochliomyia_hominivorax bio2: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 117047296, free 33721128, used 83326168, increment 11424592
+linearPredictor: max memory 1813839872, total allocated 117047296, free 33640736, used 83406560, increment 80392
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 117047296, free 33034688, used 84012608, increment 606048
+Sequential: max memory 1813839872, total allocated 117047296, free 33034688, used 84012608, increment 0
+Initial loss: 9.215029361462314
+Time since start: 245.971
+500: time = 6.167000 loss = 8.164200
+Jackknife: leave bio3 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 120651776, free 21399064, used 99252712, increment 15240104
+Cochliomyia_hominivorax bio3: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 120651776, free 9954120, used 110697656, increment 11444944
+linearPredictor: max memory 1813839872, total allocated 120651776, free 9873728, used 110778048, increment 80392
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 120651776, free 9873728, used 110778048, increment 0
+Sequential: max memory 1813839872, total allocated 120651776, free 9147760, used 111504016, increment 725968
+Initial loss: 9.215029361462314
+Time since start: 252.396
+500: time = 6.218000 loss = 8.140368
+Jackknife: leave bio4 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 113180672, free 56701240, used 56479432, increment -55024584
+Cochliomyia_hominivorax bio4: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 115998720, free 61066192, used 54932528, increment -1546904
+linearPredictor: max memory 1813839872, total allocated 115998720, free 61066192, used 54932528, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 115998720, free 61066192, used 54932528, increment 0
+Sequential: max memory 1813839872, total allocated 115998720, free 61066192, used 54932528, increment 0
+Initial loss: 9.215029361462314
+Time since start: 257.978
+500: time = 5.379000 loss = 8.150030
+Jackknife: leave bio5 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 116391936, free 47733528, used 68658408, increment 13725880
+Cochliomyia_hominivorax bio5: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 119734272, free 53904880, used 65829392, increment -2829016
+linearPredictor: max memory 1813839872, total allocated 119734272, free 53824488, used 65909784, increment 80392
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 119734272, free 53333360, used 66400912, increment 491128
+Sequential: max memory 1813839872, total allocated 119734272, free 53333360, used 66400912, increment 0
+Initial loss: 9.215029361462314
+Time since start: 264.275
+500: time = 6.089000 loss = 8.136062
+Jackknife: leave bio8 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 120455168, free 48287792, used 72167376, increment 5766464
+Cochliomyia_hominivorax bio8: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 120455168, free 36350200, used 84104968, increment 11937592
+linearPredictor: max memory 1813839872, total allocated 120455168, free 36350200, used 84104968, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 120455168, free 36350200, used 84104968, increment 0
+Sequential: max memory 1813839872, total allocated 120455168, free 36350200, used 84104968, increment 0
+Initial loss: 9.215029361462314
+Time since start: 270.527
+500: time = 6.045000 loss = 8.146040
+Jackknife: leave cattle out
+Making features
+makeFeatures: max memory 1813839872, total allocated 122617856, free 16778000, used 105839856, increment 21734888
+Cochliomyia_hominivorax cattle: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 124977152, free 29347200, used 95629952, increment -10209904
+linearPredictor: max memory 1813839872, total allocated 124977152, free 29347200, used 95629952, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 124977152, free 29347200, used 95629952, increment 0
+Sequential: max memory 1813839872, total allocated 124977152, free 29347200, used 95629952, increment 0
+Initial loss: 9.215029361462314
+Time since start: 275.627
+500: time = 4.896000 loss = 8.153994
+Jackknife: leave glc2000 out
+Making features
+makeFeatures: max memory 1813839872, total allocated 103219200, free 54285960, used 48933240, increment -46696712
+Cochliomyia_hominivorax glc2000: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 102498304, free 46273392, used 56224912, increment 7291672
+linearPredictor: max memory 1813839872, total allocated 102498304, free 46193000, used 56305304, increment 80392
+FeaturedSpace: max memory 1813839872, total allocated 102498304, free 46193000, used 56305304, increment 0
+Sequential: max memory 1813839872, total allocated 102498304, free 46193000, used 56305304, increment 0
+Initial loss: 9.215029361462314
+Time since start: 282.23
+500: time = 6.391000 loss = 8.450643
+Jackknife: only alt
+Making features
+makeFeatures: max memory 1813839872, total allocated 113442816, free 48580480, used 64862336, increment 8557032
+Cochliomyia_hominivorax alt: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 113442816, free 47520256, used 65922560, increment 1060224
+linearPredictor: max memory 1813839872, total allocated 113442816, free 47520256, used 65922560, increment 0
+FeaturedSpace: max memory 1813839872, total allocated 113442816, free 47520256, used 65922560, increment 0
+Sequential: max memory 1813839872, total allocated 113442816, free 47520256, used 65922560, increment 0
+Initial loss: 9.215029361462314
+280: time = 0.635000 loss = 9.047357
+Res.gain: 0.16767251647811676
+Jackknife: only bio12
+Making features
+makeFeatures: max memory 1813839872, total allocated 111542272, free 45706736, used 65835536, increment -87024
+Cochliomyia_hominivorax bio12: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 111542272, free 44642376, used 66899896, increment 1064360
+linearPredictor: max memory 1813839872, total allocated 111542272, free 44561984, used 66980288, increment 80392
+FeaturedSpace: max memory 1813839872, total allocated 111542272, free 44561984, used 66980288, increment 0
+Sequential: max memory 1813839872, total allocated 111542272, free 44561984, used 66980288, increment 0
+Initial loss: 9.215029361462314
+Time since start: 283.597
+280: time = 0.700000 loss = 8.964338
+Res.gain: 0.2506917182060917
+Jackknife: only bio13
+Making features
+makeFeatures: max memory 1813839872, total allocated 109182976, free 53164192, used 56018784, increment -10961504
+Cochliomyia_hominivorax bio13: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 109182976, free 52235632, used 56947344, increment 928560
+linearPredictor: max memory 1813839872, total allocated 109182976, free 52155240, used 57027736, increment 80392
+FeaturedSpace: max memory 1813839872, total allocated 109182976, free 52155240, used 57027736, increment 0
+Sequential: max memory 1813839872, total allocated 109182976, free 52155240, used 57027736, increment 0
+Initial loss: 9.215029361462314
+160: time = 0.309000 loss = 9.018595
+Res.gain: 0.19643476253671288
+Jackknife: only bio14
+Making features
+makeFeatures: max memory 1813839872, total allocated 109248512, free 50934152, used 58314360, increment 1286624
+Cochliomyia_hominivorax bio14: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 109248512, free 50113872, used 59134640, increment 820280
+linearPredictor: max memory 1813839872, total allocated 109248512, free 50033480, used 59215032, increment 80392
+FeaturedSpace: max memory 1813839872, total allocated 109248512, free 50033480, used 59215032, increment 0
+Sequential: max memory 1813839872, total allocated 109248512, free 50033480, used 59215032, increment 0
+Initial loss: 9.215029361462314
+120: time = 0.271000 loss = 9.044490
+Res.gain: 0.17053957891188354
+Jackknife: only bio15
+Making features
+makeFeatures: max memory 1813839872, total allocated 109248512, free 42570952, used 66677560, increment 7462528
+Cochliomyia_hominivorax bio15: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 109248512, free 41986328, used 67262184, increment 584624
+linearPredictor: max memory 1813839872, total allocated 109248512, free 41905936, used 67342576, increment 80392
+FeaturedSpace: max memory 1813839872, total allocated 109248512, free 41905936, used 67342576, increment 0
+Sequential: max memory 1813839872, total allocated 109248512, free 41905936, used 67342576, increment 0
+Initial loss: 9.215029361462314
+200: time = 0.380000 loss = 9.082193
+Res.gain: 0.13283620727342793
+Jackknife: only bio17
+Making features
+makeFeatures: max memory 1813839872, total allocated 108920832, free 53659536, used 55261296, increment -12081280
+Cochliomyia_hominivorax bio17: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+Time since start: 284.598
+48 samples
+Density: max memory 1813839872, total allocated 108920832, free 52879160, used 56041672, increment 780376
+linearPredictor: max memory 1813839872, total allocated 108920832, free 52879160, used 56041672, increment 0
+FeaturedSpace: max memory 1813839872, total allocated 108920832, free 52879160, used 56041672, increment 0
+Sequential: max memory 1813839872, total allocated 108920832, free 52501896, used 56418936, increment 377264
+Initial loss: 9.215029361462314
+180: time = 0.348000 loss = 9.062072
+Res.gain: 0.15295771353584264
+Jackknife: only bio18
+Making features
+makeFeatures: max memory 1813839872, total allocated 108920832, free 49437296, used 59483536, increment 3064600
+Cochliomyia_hominivorax bio18: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 108920832, free 48584224, used 60336608, increment 853072
+linearPredictor: max memory 1813839872, total allocated 108920832, free 48131560, used 60789272, increment 452664
+FeaturedSpace: max memory 1813839872, total allocated 108920832, free 48131560, used 60789272, increment 0
+Sequential: max memory 1813839872, total allocated 108920832, free 48131560, used 60789272, increment 0
+Initial loss: 9.215029361462314
+140: time = 0.292000 loss = 8.952901
+Res.gain: 0.262127963867103
+Jackknife: only bio19
+Making features
+makeFeatures: max memory 1813839872, total allocated 108331008, free 38289080, used 70041928, increment 9252656
+Cochliomyia_hominivorax bio19: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 108331008, free 37444352, used 70886656, increment 844728
+linearPredictor: max memory 1813839872, total allocated 108331008, free 37363960, used 70967048, increment 80392
+FeaturedSpace: max memory 1813839872, total allocated 108331008, free 37363960, used 70967048, increment 0
+Sequential: max memory 1813839872, total allocated 108331008, free 37363960, used 70967048, increment 0
+Initial loss: 9.215029361462314
+100: time = 0.248000 loss = 8.988979
+Res.gain: 0.22604992564713378
+Jackknife: only bio2
+Making features
+makeFeatures: max memory 1813839872, total allocated 108265472, free 48676240, used 59589232, increment -11377816
+Cochliomyia_hominivorax bio2: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 108265472, free 47842104, used 60423368, increment 834136
+linearPredictor: max memory 1813839872, total allocated 108265472, free 47393992, used 60871480, increment 448112
+FeaturedSpace: max memory 1813839872, total allocated 108265472, free 47393992, used 60871480, increment 0
+Sequential: max memory 1813839872, total allocated 108265472, free 47393992, used 60871480, increment 0
+Initial loss: 9.215029361462314
+Time since start: 285.777
+120: time = 0.258000 loss = 9.103632
+Res.gain: 0.11139689743194481
+Jackknife: only bio3
+Making features
+makeFeatures: max memory 1813839872, total allocated 108265472, free 42960336, used 65305136, increment 4433656
+Cochliomyia_hominivorax bio3: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 108265472, free 41837888, used 66427584, increment 1122448
+linearPredictor: max memory 1813839872, total allocated 108265472, free 41837888, used 66427584, increment 0
+FeaturedSpace: max memory 1813839872, total allocated 108265472, free 41837888, used 66427584, increment 0
+Sequential: max memory 1813839872, total allocated 108265472, free 41837888, used 66427584, increment 0
+Initial loss: 9.215029361462314
+180: time = 0.291000 loss = 9.155877
+Res.gain: 0.05915225463990659
+Jackknife: only bio4
+Making features
+makeFeatures: max memory 1813839872, total allocated 108265472, free 37809304, used 70456168, increment 4028584
+Cochliomyia_hominivorax bio4: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 108265472, free 36722888, used 71542584, increment 1086416
+linearPredictor: max memory 1813839872, total allocated 108265472, free 36642496, used 71622976, increment 80392
+FeaturedSpace: max memory 1813839872, total allocated 108265472, free 36642496, used 71622976, increment 0
+Sequential: max memory 1813839872, total allocated 108265472, free 36642496, used 71622976, increment 0
+Initial loss: 9.215029361462314
+Time since start: 286.807
+240: time = 0.714000 loss = 9.120155
+Res.gain: 0.09487474055502432
+Jackknife: only bio5
+Making features
+makeFeatures: max memory 1813839872, total allocated 104923136, free 38696520, used 66226616, increment -5396360
+Cochliomyia_hominivorax bio5: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 104923136, free 37815648, used 67107488, increment 880872
+linearPredictor: max memory 1813839872, total allocated 104923136, free 37735256, used 67187880, increment 80392
+FeaturedSpace: max memory 1813839872, total allocated 104923136, free 37735256, used 67187880, increment 0
+Sequential: max memory 1813839872, total allocated 104923136, free 37735256, used 67187880, increment 0
+Initial loss: 9.215029361462314
+160: time = 0.273000 loss = 9.099155
+Res.gain: 0.11587403217268388
+Jackknife: only bio8
+Making features
+makeFeatures: max memory 1813839872, total allocated 105512960, free 43237248, used 62275712, increment -4912168
+Cochliomyia_hominivorax bio8: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 105512960, free 42331704, used 63181256, increment 905544
+linearPredictor: max memory 1813839872, total allocated 105512960, free 42251312, used 63261648, increment 80392
+FeaturedSpace: max memory 1813839872, total allocated 105512960, free 42251312, used 63261648, increment 0
+Sequential: max memory 1813839872, total allocated 105512960, free 42251312, used 63261648, increment 0
+Initial loss: 9.215029361462314
+160: time = 0.275000 loss = 9.099543
+Res.gain: 0.11548639523218718
+Jackknife: only cattle
+Making features
+makeFeatures: max memory 1813839872, total allocated 105119744, free 45120264, used 59999480, increment -3262168
+Cochliomyia_hominivorax cattle: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 105119744, free 43589688, used 61530056, increment 1530576
+linearPredictor: max memory 1813839872, total allocated 105119744, free 43509296, used 61610448, increment 80392
+FeaturedSpace: max memory 1813839872, total allocated 105119744, free 43509296, used 61610448, increment 0
+Sequential: max memory 1813839872, total allocated 105119744, free 43509296, used 61610448, increment 0
+Initial loss: 9.215029361462314
+Time since start: 288.232
+180: time = 0.842000 loss = 8.998812
+Res.gain: 0.2162177852650533
+Jackknife: only glc2000
+Making features
+makeFeatures: max memory 1813839872, total allocated 118685696, free 57672096, used 61013600, increment -596848
+Cochliomyia_hominivorax glc2000: 
+Regularization values: linear/quadratic/product: 0.199, categorical: 0.250, threshold: 1.520, hinge: 0.500
+48 samples
+Density: max memory 1813839872, total allocated 118685696, free 57652264, used 61033432, increment 19832
+linearPredictor: max memory 1813839872, total allocated 118685696, free 57652264, used 61033432, increment 0
+Deactivating (glc2000=10.0)
+Deactivating (glc2000=11.0)
+Deactivating (glc2000=12.0)
+Deactivating (glc2000=13.0)
+Deactivating (glc2000=14.0)
+Deactivating (glc2000=21.0)
+Deactivating (glc2000=22.0)
+Deactivating (glc2000=23.0)
+Deactivating (glc2000=24.0)
+Deactivating (glc2000=30.0)
+Deactivating (glc2000=31.0)
+Deactivating (glc2000=33.0)
+Deactivating (glc2000=40.0)
+Deactivating (glc2000=42.0)
+Deactivating (glc2000=43.0)
+Deactivating (glc2000=44.0)
+Deactivating (glc2000=60.0)
+Deactivating (glc2000=63.0)
+Deactivating (glc2000=66.0)
+Deactivating (glc2000=67.0)
+Deactivating (glc2000=68.0)
+Deactivating (glc2000=69.0)
+Deactivating (glc2000=75.0)
+Deactivating (glc2000=81.0)
+Deactivating (glc2000=84.0)
+Deactivating (glc2000=110.0)
+Deactivating (glc2000=111.0)
+Deactivating (glc2000=113.0)
+Deactivating (glc2000=114.0)
+Deactivating (glc2000=120.0)
+Deactivating (glc2000=121.0)
+Deactivating (glc2000=122.0)
+Deactivating (glc2000=123.0)
+Deactivating (glc2000=124.0)
+Deactivating (glc2000=131.0)
+Deactivating (glc2000=140.0)
+Deactivating (glc2000=142.0)
+Deactivating (glc2000=143.0)
+Deactivating (glc2000=144.0)
+Deactivating (glc2000=160.0)
+Deactivating (glc2000=161.0)
+Deactivating (glc2000=170.0)
+Deactivating (glc2000=171.0)
+Deactivating (glc2000=172.0)
+Deactivating (glc2000=173.0)
+Deactivating (glc2000=190.0)
+Deactivating (glc2000=192.0)
+Deactivating (glc2000=193.0)
+Deactivating (glc2000=194.0)
+FeaturedSpace: max memory 1813839872, total allocated 118685696, free 57652264, used 61033432, increment 0
+Sequential: max memory 1813839872, total allocated 118685696, free 57652264, used 61033432, increment 0
+Initial loss: 9.215029361462314
+180: time = 0.306000 loss = 8.770487
+Res.gain: 0.44454192916703583
+Ending

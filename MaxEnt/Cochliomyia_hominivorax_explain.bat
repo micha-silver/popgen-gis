@@ -1,0 +1,1 @@
+java -mx1729m -cp "/home/micha/Downloads/MaxEnt/maxent.jar:/home/micha/Downloads/MaxEnt/maxent.jar" density.Explain -l /home/micha/geodata/Pablo/SA/MaxEnt/Cochliomyia_hominivorax.lambdas /home/micha/geodata/Pablo/SA/MaxEnt/Cochliomyia_hominivorax.asc /home/micha/geodata/Pablo/SA/AAIGrid
