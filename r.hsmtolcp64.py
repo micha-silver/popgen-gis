@@ -269,8 +269,8 @@ def export_layers(vect, rast):
 		os.unlink(gtiff)
 	
 	grass.run_command('v.out.ogr',input=vect, dsn=shp, type='point', overwrite=True, quiet=True, flags="e")
-	grass.run_command('r.out.gdal', input=rast, output=gtiff, 
-			overwrite=True, quiet=True, type="Float64", createopt="TFW=YES")
+	grass.run_command('r.out.gdal', input=rast, output=gtiff, type="Float64",
+			overwrite=True, quiet=True, createopt="TFW=YES", flags="c")
 	
 	return shp, gtiff
 

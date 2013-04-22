@@ -21,8 +21,14 @@ This program is free software under the GNU General Public License
 
 #%flag
 #% key: e
-#% description: Export the localities as shapefile and resulting Least Cost Network as GeoTiff
+#% description: Export the locations as shapefile and resulting Least Cost Network as GeoTiff
 #% end
+
+#%flag
+#% key: w
+#% description: Add a weight coefficient to corridor maps based on the Fst value for each pair of locations. If not given, default is 1 (no weight)
+#% end
+
 #%option
 #% key: maxent
 #% type: string
@@ -45,7 +51,7 @@ This program is free software under the GNU General Public License
 #%option
 #% key: f_max
 #% type: double
-#% description: Maximum Fst value to consider a pair of localities as "close" populations genetically
+#% description: Maximum Fst value to consider a pair of locations as "close" populations genetically
 #% required: no
 #% answer: 0
 #%end 
@@ -170,21 +176,21 @@ def create_fst_pairs(fst, f_max, pval, p_max, num_locs):
 	return pairs
 
 
-def create_lcp_corridors(friction, pairs, locs, lcp_network):
+def create_lcp_corridors(friction, pairs, locs, fst, weight_bool, lcp_network):
 	"""
 	Loop thru all pairs of localities in the pairs list
 	FOr each pair, find the indexes, codes and X-Y coords of that pair from the localities list,
-	Use r.cost to make corridor maps using the start_coordinate and end_coordinate paramters
+	Use r.cost to make corridor maps using the start_coordinate  paramter
+	Add two cost maps to create a corridor map
 	Get the minimum for each corridor using r.univar, 
-	Use that minimum to make a reclass file with values:
-		0 thru min		= 5		Min value
-		min thru (min + 5%)	= 3		Two percent above
-		min+5% thru min+10%	= 1		Five percent above
-		*			= NULL		NULL
-	Run r.reclass to create uniform reclass rasters for each pair
+	Create final corridor maps by setting values above minimum+5% to null 
+	and (possibly) weighting the corridor values with the Fst value for each pair
 	"""
 	grass.message(" === Creating corridors ===")
 	cnt = 0
+	# Prepare Fst matrix for getting Fst values in loop
+	fst_mat = np.genfromtxt(fst, skip_header=1, delimiter=',', usecols=range(1,num_locs+1))
+
 	for i in range(len(pairs)):
 		id1, id2 = pairs[i][0], pairs[i][1]
 		this_pair = str(id1)+","+str(id2)
@@ -216,16 +222,16 @@ def create_lcp_corridors(friction, pairs, locs, lcp_network):
 				start_coordinate=start2,  overwrite=True, quiet=True)
 
 			# Now combine the cost maps into a corridor
-			corridor = "corr_"+code1+"_"+code2
-			corridor_expr = corridor+"=round("+cost1+"+"+cost2+")"
-			grass.mapcalc(corridor_expr, overwrite=True)
+			tmp_corr = "tmp_corridor_" + str(os.getpid()) 
+			tmp_corridor_expr = tmp_corr+"=round("+cost1+"+"+cost2+")"
+			grass.mapcalc(tmp_corridor_expr, overwrite=True)
+
 			# Get minimum value from the corridor map
-			u = grass.read_command('r.univar', map=corridor, flags="g", quiet=True)
-			udict = grass.parse_key_val(u)
-			min = float(udict['min'])
-			one_pc=min*1.01
-			three_pc = min*1.03
-			five_pc = min*1.05
+			u = grass.read_command('r.univar', map=tmp_corr, flags="g", quiet=True)
+			univ_dict = grass.parse_key_val(u)
+			min = float(univ_dict['min'])
+			max = min*1.05
+			"""
 			# Create reclass file
 			tmp_reclass = grass.tempfile()
 			trc = open(tmp_reclass, "w")
@@ -241,10 +247,33 @@ def create_lcp_corridors(friction, pairs, locs, lcp_network):
 			grass.run_command('r.colors', map=lcp, color="ryg", quiet=True)
 			# Get rid of tmp reclass file and cost raster
 			os.unlink(tmp_reclass)
-			grass.run_command('g.mremove', rast="cost_*", quiet=True, flags="f")
+			"""
 
-	# Now merge all lcp_* maps
-	lcp_maps = grass.read_command('g.mlist', type="rast", pattern="lcp_*", separator=",").rstrip()
+			# Find the Fst value for this pair from the Fst matrix, 
+			# If the '-w' flag was given, use Fst value to create the weighting coefficient
+			if weight_bool:
+				fst_val = fst_mat[id1, id2]
+				# The weight coefficient is log of 1/fst_value
+				# So low Fst values get high coefficient
+				# For example: with Fst=0.1 weight=1, with Fst=0.01 weight=2, with Fst=0.001 weight=3, with Fst=0.2 weight=0.7, etc
+				weight_coef = math.log(1/fst_val) 
+			else:
+				weight_coef = 1
+			
+			# Now calculate the weighted corridor maps
+			# Set values from min to min+5% at tmp_corr / weight coeff
+			# Set values above min+5% to null
+			corridor = "corridor_"+code1+"_"+code2
+			corridor_expr = corridor + "=if(" + tmp_corr + ">=" + str(max) + ", null()," + tmp_corr/weight_coef + ")"
+			grass.mapcalc(corridor_expr, overwrite=True)
+			
+			# Get rid of temp rasters
+			grass.run_command('g.mremove', rast=cost1, quiet=True, flags="f")
+			grass.run_command('g.mremove', rast=cost2, quiet=True, flags="f")
+			grass.run_command('g.mremove', rast=tmp_corr, quiet=True, flags="f")
+
+	# Now merge all corridor_* maps
+	lcp_maps = grass.read_command('g.mlist', type="rast", pattern="corridor_*", separator=",").rstrip()
 	grass.run_command('r.series',input = lcp_maps, output = lcp_network, method="sum", overwrite=True, quiet=True)
 	grass.run_command('r.colors', map=lcp_network, color="ryg", quiet=True)
 	return cnt
@@ -289,6 +318,7 @@ def main():
 	friction = options['friction']
 	lcp_network = options['lcp_network']
 	export_bool = flags['e']
+	weight_bool = flags['w']
 
 	if not maxent:
 		grass.fatal("Input habitat suitability raster is required")
@@ -304,7 +334,7 @@ def main():
 	#grass.message("Created: "+str(cost_count)+" least cost maps")
 	pairs=create_fst_pairs(fst, f_max, pval, p_max, len(loc_list))
 	grass.message(" === Created list of: "+str(len(pairs))+" Fst pairs ===")
-	lcp_count = create_lcp_corridors(friction, pairs, loc_list, lcp_network)
+	lcp_count = create_lcp_corridors(friction, pairs, loc_list, fst, weight_bool, lcp_network)
 	grass.message(" === Created: "+str(lcp_count)+" Least Cost Path reclass maps, and merged into: "+lcp_network+" ===")
 	if export_bool:
 		shp, gtiff = export_layers(loc_vector, lcp_network)
