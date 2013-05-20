@@ -91,6 +91,7 @@ This program is free software under the GNU General Public License
 import os, sys, csv
 import grass.script as grass
 import numpy as np
+import math
 
 
 def create_friction(maxent, friction):
@@ -188,6 +189,7 @@ def create_lcp_corridors(friction, pairs, locs, fst, weight_bool, lcp_network):
 	"""
 	grass.message(" === Creating corridors ===")
 	cnt = 0
+	num_locs = len(locs)
 	# Prepare Fst matrix for getting Fst values in loop
 	fst_mat = np.genfromtxt(fst, skip_header=1, delimiter=',', usecols=range(1,num_locs+1))
 
@@ -264,7 +266,7 @@ def create_lcp_corridors(friction, pairs, locs, fst, weight_bool, lcp_network):
 			# Set values from min to min+5% at tmp_corr / weight coeff
 			# Set values above min+5% to null
 			corridor = "corridor_"+code1+"_"+code2
-			corridor_expr = corridor + "=if(" + tmp_corr + ">=" + str(max) + ", null()," + tmp_corr/weight_coef + ")"
+			corridor_expr = corridor + "=if(" + tmp_corr + ">=" + str(max) + ", null()," + tmp_corr + "/" + str(weight_coef) + ")"
 			grass.mapcalc(corridor_expr, overwrite=True)
 			
 			# Get rid of temp rasters
