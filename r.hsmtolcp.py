@@ -211,7 +211,7 @@ def create_lcp_corridors(friction, pairs, locs, fst, weight_bool, lcp_network):
 		try:
 			code1 and code2
 		except NameError:
-			grass.message("The pair: "+this_pair+" is not in the localities list. Ignoring...")
+			grass.message("  The pair: "+this_pair+" is not in the localities list. Ignoring...")
 		else:
 			# Create both cost maps (one for each locality in the pair)
 			cnt += 1
@@ -233,6 +233,8 @@ def create_lcp_corridors(friction, pairs, locs, fst, weight_bool, lcp_network):
 			univ_dict = grass.parse_key_val(u)
 			min = float(univ_dict['min'])
 			max = min*1.05
+			grass.message("  Using min,max values: "+str(min)+","+str(max)+" to create corridor for pair: "+code1+","+code2+" ")
+
 			"""
 			# Create reclass file
 			tmp_reclass = grass.tempfile()
@@ -258,7 +260,15 @@ def create_lcp_corridors(friction, pairs, locs, fst, weight_bool, lcp_network):
 				# The weight coefficient is log of 1/fst_value
 				# So low Fst values get high coefficient
 				# For example: with Fst=0.1 weight=1, with Fst=0.01 weight=2, with Fst=0.001 weight=3, with Fst=0.2 weight=0.7, etc
-				weight_coef = math.log(1/fst_val) 
+				# Take care of edge case, Fst = 0...
+				if (fst_val == 0):
+					# the Fst values are 3 decimal palces, so minimum, above 0 is 0.001. That gives weight_coef of 3. 
+					# So we artificially set the coefficient for 0 to 4. 
+					weight_coef=4
+				else:
+					weight_coef = math.log(1/fst_val) 
+
+				grass.message("Using weight coefficient: "+weight_coef+" for pair: "+code1+","+code2)
 			else:
 				weight_coef = 1
 			
@@ -266,7 +276,9 @@ def create_lcp_corridors(friction, pairs, locs, fst, weight_bool, lcp_network):
 			# Set values from min to min+5% at tmp_corr / weight coeff
 			# Set values above min+5% to null
 			corridor = "corridor_"+code1+"_"+code2
-			corridor_expr = corridor + "=if(" + tmp_corr + ">=" + str(max) + ", null()," + tmp_corr + "/" + str(weight_coef) + ")"
+			corridor_expr = corridor + " = if(" + tmp_corr + ">=" + str(max) + ",null()," + tmp_corr + "/" + str(weight_coef) + ")"
+			#grass.message("Corridor expression: "+corridor_expr)
+
 			grass.mapcalc(corridor_expr, overwrite=True)
 			
 			# Get rid of temp rasters
@@ -276,7 +288,8 @@ def create_lcp_corridors(friction, pairs, locs, fst, weight_bool, lcp_network):
 
 	# Now merge all corridor_* maps
 	lcp_maps = grass.read_command('g.mlist', type="rast", pattern="corridor_*", separator=",").rstrip()
-	grass.run_command('r.series',input = lcp_maps, output = lcp_network, method="sum", overwrite=True, quiet=True)
+	# Use average of all corridor rasters. Note that r.series ignores NULL cells
+	grass.run_command('r.series',input = lcp_maps, output = lcp_network, method="average", overwrite=True, quiet=True)
 	grass.run_command('r.colors', map=lcp_network, color="ryg", quiet=True)
 	return cnt
 
