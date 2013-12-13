@@ -159,7 +159,7 @@ def create_fst_pairs(fst, f_max, pval, p_max, num_locs):
 
 	grass.message(" === Creating list of pairs from Fst and p-value matrices ===")
 	# Import arrays, skip header row, and slice off first column
-	fst_mat = np.genfromtxt(fst, skip_header=1, delimiter=',', usecols=range(1,num_locs+1))
+        fst_mat = np.genfromtxt(fst, skip_header=1, delimiter=',', usecols=range(1,num_locs+1))
 	pval_mat = np.genfromtxt(pval, skip_header=1, delimiter=',', usecols=range(1,num_locs+1))
 	# Make boolean arrays that reflect the max conditions for Fst and p-value 
 	fst_bool = (fst_mat<=f_max)
@@ -268,8 +268,9 @@ def create_lcp_corridors(friction, pairs, locs, fst, weight_bool, lcp_network):
 				else:
 					weight_coef = math.log(1/fst_val) 
 
-				grass.message("Using weight coefficient: "+weight_coef+" for pair: "+code1+","+code2)
+				grass.message("Using weight coefficient: "+str(weight_coef)+" for pair: "+code1+","+code2)
 			else:
+				# No weighting requested, just use raw values
 				weight_coef = 1
 			
 			# Now calculate the weighted corridor maps
@@ -289,8 +290,9 @@ def create_lcp_corridors(friction, pairs, locs, fst, weight_bool, lcp_network):
 	# Now merge all corridor_* maps
 	lcp_maps = grass.read_command('g.mlist', type="rast", pattern="corridor_*", separator=",").rstrip()
 	# Use average of all corridor rasters. Note that r.series ignores NULL cells
-	grass.run_command('r.series',input = lcp_maps, output = lcp_network, method="average", overwrite=True, quiet=True)
-	grass.run_command('r.colors', map=lcp_network, color="ryg", quiet=True)
+	grass.run_command('r.series',input=lcp_maps, output=lcp_network, method="average", overwrite=True, quiet=True)
+	grass.run_command('r.colors', map=lcp_network, rules="lcp_network.ramp", quiet=True)
+	grass.run_command('r.colors', map=friction, rules="friction.ramp", quiet=True)
 	return cnt
 
 
@@ -345,6 +347,7 @@ def main():
 	# Work starts here
 	create_friction(maxent, friction)
 	loc_list, loc_vector = create_localities(loc)
+        grass.message(" === Found: "+str(len(loc_list))+" localities ===")
 	#cost_count = create_cost_maps(loc_list, friction)
 	#grass.message("Created: "+str(cost_count)+" least cost maps")
 	pairs=create_fst_pairs(fst, f_max, pval, p_max, len(loc_list))
