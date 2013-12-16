@@ -6,6 +6,8 @@ AUTHOR(S): Micha Silver <micha at arava co il>
 PURPOSE:   Create predicted migration corridors for insects
 		based on a habitat suitability raster produced using Maxent "presence only" software and
 		genetic distance from an Fst matrix produced using Arlequin 
+REQUIREMENTS:   This script runs within a GRASS 7 session
+                and requires the python Numpy module
 COPYRIGHT: (C) 2013 Micha Silver, Pablo Fresia and the GRASS Development Team
 This program is free software under the GNU General Public License
 (>=v2). Read the file COPYING that comes with GRASS for details.
